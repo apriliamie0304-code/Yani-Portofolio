@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400&display=swap');
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  transition: all 0.5s ease;
+  position: relative;
+  background-color: #fdf6f6;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  transition: all 0.5s ease;
+  margin: 0;
+  padding: 0;
+  background-color: #fff5f7;
+  color: #2d3748;
+  background-image: 
+    linear-gradient(90deg, rgba(237, 100, 166, 0.1) 1px, transparent 1px),
+    linear-gradient(rgba(237, 100, 166, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float-slow {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes bounce-slow {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sparkle {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateX(0) skewX(0); }
+  50% { transform: translateX(-10px) skewX(-5deg); }
+}
+
+/* Custom Gradients */
+.bg-aesthetic-pink {
+  background: linear-gradient(135deg, #fed7e2 0%, #ed64a6 50%, #b83280 100%);
+}
+
+.bg-aesthetic-purple {
+  background: linear-gradient(135deg, #e9d8fd 0%, #9f7aea 50%, #6b46c1 100%);
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(135deg, #ed64a6 0%, #9f7aea 100%);
+}
+
+/* Animation Classes */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in 1s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in 1s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Evil Theme Styles */
+body.evil-theme {
+  background-color: #0a0a0a;
+  color: #fff;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(88, 28, 135, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(76, 29, 149, 0.1) 0%, transparent 50%);
+}
+
+body.evil-theme::before {
+  content: '🦇';
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  animation: float 3s ease-in-out infinite;
+}
+
+body.evil-theme::after {
+  content: '🌑';
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 24px;
+  animation: glow 4s ease-in-out infinite;
+}
+
+/* Good Theme Styles */
+body.good-theme {
+  background-color: #fff;
+  color: #2d3748;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(216, 180, 254, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(192, 132, 252, 0.2) 0%, transparent 50%);
+}
+
+body.good-theme::before {
+  content: '🦋';
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  animation: float 3s ease-in-out infinite;
+}
+
+body.good-theme::after {
+  content: '✨';
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  font-size: 24px;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Magical Text Effects */
+.magical-text-good {
+  background: linear-gradient(45deg, #c084fc, #8b5cf6, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 3s infinite linear;
+}
+
+.magical-text-evil {
+  background: linear-gradient(45deg, #6b21a8, #581c87, #3b0764);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 3s infinite linear;
+}
+
+/* Custom Fonts */
+.font-enchanted {
+  font-family: 'Cinzel', serif;
+}
+
+/* Magical Border */
+.magical-border-good {
+  position: relative;
+  overflow: hidden;
+}
+
+.magical-border-good::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #c084fc, #8b5cf6, #7c3aed);
+  z-index: -1;
+  border-radius: inherit;
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+.magical-border-evil {
+  position: relative;
+  overflow: hidden;
+}
+
+.magical-border-evil::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #6b21a8, #581c87, #3b0764);
+  z-index: -1;
+  border-radius: inherit;
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 5px rgba(139, 92, 246, 0.5)); }
+  50% { filter: drop-shadow(0 0 15px rgba(139, 92, 246, 0.8)); }
+}
+
+@keyframes borderGlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Theme Transitions */
+.transition-all {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover Effects */
+.hover-transform {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-transform:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Theme Transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Theme-specific styles */
+.evil-theme .App {
+  background-color: #0a0a0a;
+  color: #fff;
+}
+
+.good-theme .App {
+  background-color: #fff;
+  color: #2d3748;
+}
+
+/* Button hover effects */
+.transform {
+  transition: transform 0.2s ease;
+}
+
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}

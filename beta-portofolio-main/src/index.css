@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-white text-gray-800;
+}
+
+.hover-glow {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+}
+
+.hover-glow:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(255, 180, 220, 0.6);
+  opacity: 1;
+}
+
+.hover-soft {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.hover-soft:hover {
+  transform: translateY(-4px);
+  opacity: 1;
+}
+
+@keyframes hoverSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.group:hover .spin-hover {
+  animation: hoverSpin 1.8s linear infinite;
+}
+
+/* Animasi mengambang pelan */
+@keyframes float-slow {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-float-slow {
+  animation: float-slow 3s ease-in-out infinite;
+}
+
+/* Animasi bintang berputar pelan */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
